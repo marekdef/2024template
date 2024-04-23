@@ -10,11 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import pl.senordeveloper.template2024.logging.Loggable
+import pl.senordeveloper.template2024.logging.loggable
 import pl.senordeveloper.template2024.ui.theme.Template2024Theme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(),
+    Loggable by loggable<MainActivity>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        d("onCreate({})", savedInstanceState)
         setContent {
             Template2024Theme {
                 // A surface container using the 'background' color from the theme
