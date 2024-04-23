@@ -64,6 +64,10 @@ dependencies {
 
     implementation(libs.logging.slf4j)
     implementation(libs.logging.logback)
+    implementation(libs.moshi)
+
+    implementation(libs.moshi.kotlin)
+    ksp(libs.moshi.kotlin.codegen)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
