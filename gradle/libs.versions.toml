@@ -10,6 +10,7 @@ activityCompose = "1.9.0"
 composeBom = "2024.04.01"
 slf4j-logback-android = "3.0.0"
 slf4j-api = "2.0.13"
+ksp =  "1.9.23-1.0.20"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,9 +30,14 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 
 logging-logback = { module = "com.github.tony19:logback-android", version.ref = "slf4j-logback-android" }
 logging-slf4j = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j-api" }
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshiKotlin" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshiKotlinCodegen" }
+moshi-kotlin-codegen-compiler = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen-compiler", version.ref = "moshiKotlinCodegenCompiler" }
 
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidKsp = { id ="com.google.devtools.ksp", version.ref = "ksp" }
 
