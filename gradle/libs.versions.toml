@@ -8,6 +8,7 @@ espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.9.0"
 composeBom = "2024.04.01"
+slf4j-logback-android = "3.0.0"
 slf4j-api = "2.0.13"
 
 [libraries]
@@ -25,7 +26,10 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-logging-slf4j = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j-api"}
+
+logging-logback = { module = "com.github.tony19:logback-android", version.ref = "slf4j-logback-android" }
+logging-slf4j = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j-api" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
