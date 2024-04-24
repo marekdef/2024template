@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            keyAlias = "release"
+            keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+            storeFile = file("${project.rootDir.absolutePath}/keystore.jks")
+            storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+        }
+    }
     namespace = "pl.senordeveloper.template2024"
     compileSdk = 34
 
@@ -23,11 +31,16 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
+            signingConfigs
+        }
+        debug {
+            isDebuggable = true
         }
     }
     compileOptions {
